@@ -13,6 +13,14 @@ console.log(input)
 /***************reusable function********************/
 
 /* Function pour l'alert et le popup qui va etre afficher (time control)*/
+
+
+
+         //Help faut faire quoi avec cette fonction de ses morts ? Gena ne sais pas non plus 
+
+
+
+
 function start(duree)
 {
 var o=document.getElementById("sp");
@@ -136,6 +144,17 @@ list.addEventListener('click',e =>{
 //we will apply a class to the Todos that dont match and the that class will
 
 // have keyup event 
+
+
+
+
+
+
+
+
+// AU SECOUR j'ai tout enlevé ça ma trop soulé !
+
+
 
 
 
