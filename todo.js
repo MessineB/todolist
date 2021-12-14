@@ -158,16 +158,29 @@ list.addEventListener('click',e =>{
 
 
 
-const retrieve = (term) =>{
+const retrieve = (term) => {
+   
+   term = term.toLowerCase(); // Met la recherche en minuscule pour la rendre insensible à la casse
+   const todo = document.querySelectorAll("li"); // Récupére tous les <li>
 
-   //function pour faire un filtre i
-};  
 
+   for (var i = 0; i < todo.length; i++) {
+
+      var text = todo[i].innerText.toLowerCase(); // Récupère le texte du <li> et le met en minuscule
+      
+      if (!text.includes(term)) {
+         todo[i].classList.add("filtre");
+      }
+      else {
+         todo[i].classList.remove("filtre");
+      }
+   }
+};
 
 //evenement de recherche des mots clés 
-search.addEventListener('keyup', () =>{
-  
 
+search.addEventListener('keyup', () => {
+   retrieve( document.querySelector("form.search input").value );
 })
 
 /*************************************Fin SEARCH ITEM********************************************/
