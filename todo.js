@@ -105,9 +105,8 @@ btn.addEventListener('click',e =>{
 
    const i = document.createElement('i');
    i.className ="fas fa-trash delete";
-
    list.appendChild(elem);
-   elem.appendChild(span)
+   elem.appendChild(span);
    elem.appendChild(i);
    e.preventDefault();
 
