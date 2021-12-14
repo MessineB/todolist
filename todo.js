@@ -6,6 +6,8 @@ const gPop = document.querySelector('.popup-wrapper');
 const btn = document.querySelector('.btn');
 const search = document.querySelector('.search input');
 gPop.style.display = "none";
+let input = document.getElementsByTagName("input")
+console.log(input)
 
 
 /***************reusable function********************/
@@ -94,17 +96,34 @@ onetime(gPop,'click',handler);
 
 //Eventlistner Add TODOS
 btn.addEventListener('click',e =>{
- 
-  
-});
+   let elem = document.createElement('li');
+   elem.className = "list-group-item d-flex justify-content-between align-items-center";
+
+   let span = document.createElement('span');
+   span.innerHTML = input.item(1).value;
+   input.item(1).value = "";
+
+   const i = document.createElement('i');
+   i.className ="fas fa-trash delete";
+
+   list.appendChild(elem);
+   elem.appendChild(span)
+   elem.appendChild(i);
+   e.preventDefault();
+
+}
+);
 
 /************* Fin Adding TO DO**************/
 
 
 
 /*************Deleting  TO DO**************/
-list.addEventListener('click',e =>{
 
+list.addEventListener('click',e =>{
+   if (e.target.classList.contains("delete")) {
+      e.target.parentNode.remove();
+   }
 });
 
 /************* Fin Deleting  TO DO**************/
