@@ -7,7 +7,7 @@ const btn = document.querySelector('.btn');
 const search = document.querySelector('.search input');
 gPop.style.display = "none";
 let input = document.getElementsByTagName("input")
-console.log(input)
+console.log(input.item(1))
 
 
 /***************reusable function********************/
@@ -16,7 +16,7 @@ console.log(input)
 
 
 
-         //Help faut faire quoi avec cette fonction de ses morts ? Gena ne sais pas non plus 
+         //Help faut faire quoi avec cette fonction de ses morts ? 
 
 
 
@@ -32,7 +32,7 @@ setTimeout("start("+duree+" -1)", 1000);
 }
 else
 {
-   alert("enter a valid to do");
+   alert("Entre une vrai valeur !");
 o.innerHTML ="Au revoir";
 gPop.style.display="none";
 popup.style.visibility ="hidden";
@@ -104,6 +104,10 @@ onetime(gPop,'click',handler);
 
 //Eventlistner Add TODOS
 btn.addEventListener('click',e =>{
+   if(input.item(1).value == "")  {
+      start()
+    }
+   else {
    let elem = document.createElement('li');
    elem.className = "list-group-item d-flex justify-content-between align-items-center";
 
@@ -118,6 +122,7 @@ btn.addEventListener('click',e =>{
    elem.appendChild(i);
    e.preventDefault();
 
+}
 }
 );
 
